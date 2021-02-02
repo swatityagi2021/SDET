@@ -1,0 +1,13 @@
+import com.eviware.soapui.support.XmlHolder
+
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+def sessionid = holder.getNodeValue("//*:sessionId)
+
+log.info "my session id is "+sessionid
+
+assert sessionid != null
+
+------
+
+log.info is like println, print info 
